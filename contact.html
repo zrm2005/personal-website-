@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  Name: Zach Molnar
+  File: contact.html
+
+  Description: Contact page for personal website
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zach Molnar | Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+  <header>
+    <div class="site-header">
+      <h1>Zach Molnar</h1>
+      <p class="tagline">Information Technology Student at Mizzou</p>
+    </div>
+
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reflection.html">Reflection</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h2>Contact Me</h2>
+      <p class="contact-intro">
+        Please fill out the form below to send me a message.
+      </p>
+
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <select id="title" name="title" required>
+            <option value="" disabled selected>Select your title</option>
+            <option value="mr">Mr.</option>
+            <option value="ms">Ms.</option>
+            <option value="mrs">Mrs.</option>
+            <option value="dr">Dr.</option>
+            <option value="prof">Prof.</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Select an Option</label>
+          <select id="reason" name="reason" required>
+            <option value="" disabled selected>Select a reason</option>
+            <option value="question">Question</option>
+            <option value="feedback">Feedback</option>
+            <option value="project">Project Inquiry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Enter your message here"
+            required></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <input type="reset" value="Clear Form" class="btn-secondary">
+          <input type="submit" value="Submit Form" class="btn-primary">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: 
+      <a href="mailto:zrm2005@umsystem.edu">zrm2005@umsystem.edu</a>
+    </p>
+    <p>&copy; 2026 Zach Molnar</p>
+  </footer>
+</body>
+</html>

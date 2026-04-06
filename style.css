@@ -1,0 +1,314 @@
+/*
+  Name: Zach Molnar
+  File: style.css
+  Description: Main styling for personal website
+*/
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+  color: #222;
+}
+
+.site-header {
+  text-align: center;
+  padding: 20px;
+  background-color: #1f3c88;
+  color: white;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.tagline {
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.content-box {
+  background-color: white;
+  border: 2px solid #d9dfe8;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.reflection-box {
+  background-color: white;
+  border: 3px solid #1f3c88;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #1f3c88;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+.intro-paragraph::first-letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f3c88;
+}
+
+.reflection-paragraph:nth-of-type(even) {
+  text-indent: 2em;
+}
+
+.education-list {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #1f3c88;
+  color: white;
+}
+
+.footer-contact {
+  margin: 5px 0;
+}
+
+/* IMAGE + VIDEO STYLING */
+.profile-media {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.profile-media img,
+.profile-media video {
+  width: 60%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #d9dfe8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-media img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+.profile-media figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* PRINT QUERY FOR ABOUT PAGE */
+@media print {
+  @page {
+    margin: 1in;
+  }
+
+  body.about-page {
+    background: white;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  body.about-page * {
+    color: black !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+
+  body.about-page nav,
+  body.about-page .tagline,
+  body.about-page .profile-media,
+  body.about-page h2,
+  body.about-page .dropdown-menu,
+  body.about-page .submenu {
+    display: none !important;
+  }
+
+  body.about-page main {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body.about-page .content-box {
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  body.about-page .site-header {
+    padding: 0 0 10px 0;
+    text-align: left;
+  }
+
+  body.about-page .site-header h1 {
+    font-size: 20pt;
+    margin-bottom: 12px;
+  }
+
+  body.about-page p {
+    font-size: 11pt;
+    margin-bottom: 10px;
+  }
+
+  body.about-page .intro-paragraph::first-letter {
+    font-size: 20pt;
+    color: black;
+  }
+
+  body.about-page .education-list {
+    margin: 0 0 12px 20px;
+    padding: 0;
+    font-size: 11pt;
+  }
+
+  body.about-page footer {
+    text-align: left;
+    padding: 10px 0 0 0;
+    border-top: 1px solid black;
+    margin-top: 12px;
+  }
+
+  body.about-page footer p:first-child {
+    display: none;
+  }
+
+  body.about-page .footer-contact {
+    margin: 4px 0;
+    font-size: 11pt;
+  }
+}
+/* CONTACT PAGE */
+.contact-section {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border: 2px solid #d9dfe8;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #1f3c88;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #c7cfdb;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1f3c88;
+  box-shadow: 0 0 5px rgba(31, 60, 136, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 22px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #1f3c88;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #162d66;
+}
+
+.btn-secondary {
+  background-color: #d9dfe8;
+  color: #222;
+}
+
+.btn-secondary:hover {
+  background-color: #c4ccd8;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-section {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
