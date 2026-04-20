@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Name: Zach Molnar
+    Date: April 19, 2026
+    File: project.html
+    Description: Responsive project/career/business content page with anchor links and mobile navigation.
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zach Molnar | Project Page</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    header {
+      background: #0b1f3a;
+      color: #fff;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .tagline {
+      margin: 0.25rem 0 0;
+      font-size: 1rem;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    nav {
+      width: 100%;
+    }
+
+    .nav-menu {
+      list-style: none;
+      margin: 1rem 0 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu li {
+      position: relative;
+    }
+
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.6rem 0.9rem;
+      display: block;
+      border-radius: 6px;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a:focus {
+      background: #16345d;
+    }
+
+    .dropdown-menu,
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: #16345d;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-radius: 6px;
+    }
+
+    .submenu {
+      left: 100%;
+      top: 0;
+    }
+
+    .dropdown:hover > .dropdown-menu,
+    .dropdown:focus-within > .dropdown-menu,
+    .dropdown-submenu:hover > .submenu,
+    .dropdown-submenu:focus-within > .submenu {
+      display: block;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem 1rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      color: #0b1f3a;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto 1rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* grid layout here */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      scroll-margin-top: 120px;
+    }
+
+    section h3 {
+      margin-top: 0;
+      color: #0b1f3a;
+    }
+
+    figure {
+      margin: 1rem 0;
+    }
+
+    figure img,
+    figure video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+
+    .skills-list {
+      padding-left: 1.2rem;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      color: #0b1f3a;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .top-link:hover,
+    .top-link:focus {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #0b1f3a;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact-info {
+      margin-top: 1rem;
+    }
+
+    .contact-info p {
+      margin: 0.5rem 0;
+    }
+
+    .contact-info a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover,
+    .contact-info a:focus {
+      text-decoration: underline;
+    }
+
+    .footer-icon {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 0.4rem;
+    }
+
+    /* media query here */
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .tagline {
+        font-size: 0.95rem;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      nav {
+        display: none;
+      }
+
+      nav.show {
+        display: block;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .dropdown-menu,
+      .submenu {
+        position: static;
+        display: block;
+        background: transparent;
+        padding-left: 1rem;
+      }
+
+      .dropdown-menu a,
+      .submenu a {
+        padding-left: 0.5rem;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      body {
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <div class="header-wrap">
+      <div>
+        <h1>Zach Molnar</h1>
+        <p class="tagline">Information Technology Student at Mizzou</p>
+      </div>
+
+      <div class="hamburger" aria-label="Toggle navigation" tabindex="0">&#9776;</div>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reflection.html">Reflection</a></li>
+          <li class="dropdown">
+            <a href="project.html">Project</a>
+            <ul class="dropdown-menu">
+              <li><a href="project.html#web-design">Web Design</a></li>
+              <li><a href="project.html#coding-skills">Coding Skills</a></li>
+              <li><a href="project.html#career-goals">Career Goals</a></li>
+              <li><a href="project.html#artifacts">Artifacts</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Projects, Skills, and Career Interests</h2>
+    <p>
+      This page highlights my work, skills, and future goals in information technology. It includes examples of web design,
+      coding, academic growth, and career development.
+    </p>
+  </section>
+
+  <main>
+    <div class="project-grid">
+      <section id="web-design">
+        <h3>Web Design</h3>
+        <p>
+          I have been building responsive webpages using HTML and CSS. My focus has been creating clean layouts, user-friendly navigation,
+          and pages that work well on both desktop and mobile screens.
+        </p>
+        <figure>
+          <img src="compsci.webp" alt="Computer science themed image representing web design and technology.">
+          <figcaption>This image represents my growing experience with web design and technology projects.</figcaption>
+        </figure>
+        <a class="top-link" href="#top">Back to top</a>
+      </section>
+
+      <section id="coding-skills">
+        <h3>Coding Skills</h3>
+        <p>
+          Through class projects, I have improved my understanding of HTML structure, CSS styling, responsive layouts,
+          and basic problem solving in technology-focused assignments.
+        </p>
+        <ul class="skills-list">
+          <li>HTML page structure and semantic elements</li>
+          <li>CSS layout with Grid and media queries</li>
+          <li>Navigation design and page linking</li>
+          <li>Testing and improving mobile-friendly pages</li>
+        </ul>
+        <a class="top-link" href="#top">Back to top</a>
+      </section>
+
+      <section id="career-goals">
+        <h3>Career Goals</h3>
+        <p>
+          My career goal is to continue developing technical skills in information technology while gaining experience in web development,
+          digital design, and professional communication. I want to build projects that show both creativity and technical ability.
+        </p>
+        <figure>
+          <video controls>
+            <source src="resumemov.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>This video can be used as a featured artifact to show a personal introduction or resume presentation.</figcaption>
+        </figure>
+        <a class="top-link" href="#top">Back to top</a>
+      </section>
+
+      <section id="artifacts">
+        <h3>Artifacts</h3>
+        <p>
+          My artifacts represent the skills and knowledge I have developed in this course. They show progress in designing webpages,
+          organizing content, and creating a professional online presence.
+        </p>
+        <article>
+          <h4>Featured Work</h4>
+          <p>
+            Artifacts may include webpage screenshots, project drafts, videos, written reflections, and visual examples of completed class work.
+            These pieces help demonstrate both learning and improvement over time.
+          </p>
+        </article>
+        <a class="top-link" href="#top">Back to top</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Zach Molnar — April 19, 2026</p>
+
+    <div class="contact-info">
+      <p>
+        <img src="images/phone.png" alt="Phone icon" class="footer-icon">
+        <a href="tel:5551234567">(555) 123-4567</a>
+      </p>
+
+      <p>
+        <img src="images/email.png" alt="Email icon" class="footer-icon">
+        <a href="mailto:zachmolnar@email.com">zachmolnar@email.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    function toggleMenu() {
+      nav.classList.toggle('show');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keypress', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        toggleMenu();
+      }
+    });
+  </script>
+</body>
+</html>
